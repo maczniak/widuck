@@ -1,0 +1,20 @@
+{
+	"protocol": "http",
+	"host": "widuck.example.com",
+	"port": 80,
+
+	"mysql": {
+		"host": "localhost",
+		"user": "<widuck-user>",
+		"password": "<widuck-password>",
+		"database": "<widuck-database>"
+	},
+
+	"facebook": {
+		"clientID": "<facebook-app-id>",
+		"clientSecret": "<facebook-app-secret-code>",
+		"callbackPath": "/auth/facebook/callback"
+	},
+
+	"mainpage": "home"
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>koa-passport example</title>
+  <script>
+    if (window.location.hash == '#_=_') { // https://coderwall.com/p/u3z_kq
+      window.location.hash = ''; // for older browsers, leaves a # behind
+      history.pushState('', document.title, window.location.pathname); // nice and clean
+      e.preventDefault(); // no page reload
+    }
+  </script>
+</head>
+<body>
+  <p>
+  {{#if logined}}
+    {{user.name}} <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/auth/facebook">Sign in with Facebook</a> <a href="/auth/twitter">Sign in with Twitter</a> <a href="/auth/google">Sign in with Google</a>
+  {{/if}}
+  </p>
+  {{#if article.content}}
+    <p>{{{article.content}}}</p>
+    {{#if logined}}
+    <p><a href="/edit/{{article.pagename}}">edit</a>
+    <a><a href="/delete/{{article.pagename}}">delete</a></p>
+    {{/if}}
+  {{else}}
+    <p>There is no {{article.pagename}} page.</p>
+    {{#if logined}}
+    <p><a href="/edit/{{article.pagename}}">create</a></p>
+    {{/if}}
+  {{/if}}
+</body>
+</html>

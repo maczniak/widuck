@@ -1,0 +1,69 @@
+create table user (
+id int primary key auto_increment,
+name varchar(100)
+);
+
+create table social_media (
+id int primary key auto_increment,
+user_id int,
+media varchar(10),
+media_username varchar(100)
+);
+
+create table article (
+id int primary key auto_increment,
+ns varchar(100),
+title varchar(100),
+content text,
+user_id int,
+mod_time datetime,
+unique key (ns, title)
+);
+
+create table article_history (
+id int primary key auto_increment,
+article_id int,
+deleted int default 0,
+ns varchar(100),
+changed_ns int default 0,
+title varchar(100),
+changed_title int default 0,
+content text,
+changed_content int default 0,
+user_id int,
+changed_user_id int default 0,
+mod_time datetime,
+changed_files int default 0
+);
+
+create table file (
+id int primary key auto_increment,
+filename varchar(100),
+path varchar(100),
+checksum char(32),
+size int,
+user_id int,
+mod_time datetime
+);
+
+create table file_history (
+id int primary key auto_increment,
+file_id int,
+deleted int default 0,
+filename varchar(100),
+changed_filename int default 0,
+path varchar(100),
+checksum char(32),
+changed_checksum int default 0,
+size int,
+user_id int,
+last_modified datetime
+);
+
+create table article_file (
+id int primary key auto_increment,
+seq int,
+article_id int,
+file_id int
+);
+

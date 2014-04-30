@@ -1,0 +1,23 @@
+
+* CRUD
+* file upload http://www.dropzonejs.com/
+* image resize
+* HTML template
+* apply Bootstrap
+* Twitter login
+* Google login
+* rename page
+* article history
+* clear modularization
+* package.json
+* apply Grunt
+* JavaScript testing
+* option to hide social media information
+* social media unregistration guide
+* SQLite
+* tooltip-able page
+* single-page application (AngularJS or Backbone.js)
+
+* redirect to original page upon login
+* check permission before article update or deletion
+
